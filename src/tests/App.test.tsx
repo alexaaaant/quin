@@ -42,7 +42,7 @@ jest.mock('@googlemaps/react-wrapper', () => {
 
 export const handlers = [
   rest.get(`*${LAUNCH}*`, (req, res, ctx) => {
-    return res(ctx.json([{ id: '1', name: '2', pad: { latitude: 1, longitude: 2 } }]));
+    return res(ctx.json({ results: [{ id: '1', name: '2', pad: { latitude: 1, longitude: 2 } }] }));
   })
 ];
 
@@ -59,5 +59,11 @@ describe('App', () => {
     const { container } = render(<App />);
 
     expect(container).toMatchSnapshot();
+
+    // await waitFor(() => {
+    //   expect(container.querySelector('.marker')).toBeInTheDocument();
+    // });
+
+    // expect(container).toMatchSnapshot();
   });
 });
