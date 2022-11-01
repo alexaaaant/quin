@@ -1,4 +1,5 @@
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
+import { Alert, CircularProgress } from '@mui/material';
 import { useSelector } from '../common/hooks/useSelector';
 import { Map } from '../components/Map';
 import { Marker } from '../components/Marker';
@@ -6,8 +7,8 @@ import { Marker } from '../components/Marker';
 export const MapWrapper: React.FC = () => {
   const { launches } = useSelector((state) => state.launches);
   const render = (status: Status): JSX.Element => {
-    if (status === Status.FAILURE) return <div>fail</div>;
-    return <div>spinner</div>;
+    if (status === Status.FAILURE) return <Alert severity="error">Something bad happend :(</Alert>;
+    return <CircularProgress />;
   };
 
   return (
