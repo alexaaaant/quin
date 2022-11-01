@@ -6,7 +6,7 @@ import { Marker } from '../components/Marker';
 export const MapWrapper: React.FC = () => {
   const { launches } = useSelector((state) => state.launches);
   const render = (status: Status): JSX.Element => {
-    if (status === Status.FAILURE) return <div>fail1</div>;
+    if (status === Status.FAILURE) return <div>fail</div>;
     return <div>spinner</div>;
   };
 
