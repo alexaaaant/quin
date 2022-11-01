@@ -17,7 +17,6 @@ const launchesSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchAllLaunches.fulfilled, (state, action) => {
       action.payload.results.forEach((launch) => {
-        console.log(launch);
         state.launches[launch.id] = {
           id: launch.id,
           name: launch.name,
