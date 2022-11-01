@@ -13,3 +13,7 @@ export interface ILaunchOriginal {
     longitude: string;
   };
 }
+
+export interface IGetAllLaunchesParams {
+  window_start__gte: string;
+}

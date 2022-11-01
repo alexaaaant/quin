@@ -4,10 +4,12 @@ import { fetchAllLaunches } from './actions';
 
 export interface LaunchesState {
   launches: Record<ILaunch['id'], ILaunch>;
+  status: 'loading' | 'fail' | 'idle';
 }
 
 const initialState: LaunchesState = {
-  launches: {}
+  launches: {},
+  status: 'idle'
 };
 
 const launchesSlice = createSlice({

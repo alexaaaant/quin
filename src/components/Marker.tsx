@@ -21,5 +21,5 @@ export const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
     }
   }, [marker, options]);
 
-  return <div>dot</div>;
+  return null;
 };

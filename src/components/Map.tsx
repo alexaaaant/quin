@@ -12,9 +12,7 @@ export const Map: React.FC<MapProps> = ({ onClick, onIdle, style, children, ...o
   const [map, setMap] = useState<google.maps.Map>();
 
   useEffect(() => {
-    console.log('window.google.maps.Map before');
     if (ref.current !== null && map === undefined) {
-      console.log('window.google.maps.Map');
       setMap(
         new window.google.maps.Map(ref.current, {
           center: { lat: -39.262833, lng: 177.864469 },
